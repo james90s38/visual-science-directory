@@ -170,9 +170,10 @@ function updateToolbarVisibility() {
   const delta = current - lastScrollY;
   const isMobile = window.innerWidth <= 760;
   const galleryTop = gallery ? gallery.offsetTop : 0;
-  const hideAfterGridStarts = Math.max(96, galleryTop - 24);
+  const hideBeforeGrid = Math.round(window.innerHeight * 0.25);
+  const hideAfterApproachingGrid = Math.max(180, galleryTop - hideBeforeGrid);
 
-  if (!isMobile || current < hideAfterGridStarts) {
+  if (!isMobile || current < hideAfterApproachingGrid) {
     toolbar.classList.remove('is-hidden');
     toolbarHidden = false;
     lastScrollY = current;
