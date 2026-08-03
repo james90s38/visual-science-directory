@@ -25,8 +25,12 @@
   border-color: #b8b0a2;
   box-shadow: 0 0 0 4px rgba(21, 21, 21, 0.06);
 }
-.filter-area { display: grid; gap: var(--space-2); }
-.filter-row { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.filter-area {
+  display: grid;
+  justify-content: end;
+  gap: var(--space-2);
+}
+.filter-row { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-2); }
 .topic-card {
   border: 0;
   padding: 0;
@@ -40,11 +44,9 @@
 }
 .card-image {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: 50% 50%;
+  height: auto;
   border-radius: var(--radius-lg);
-  background: var(--color-soft);
+  background: #ffffff;
   box-shadow: var(--shadow-card);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }

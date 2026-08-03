@@ -14,6 +14,10 @@ A simple, very fast static website for premium visual science infographics.
 - `assets/images/` — optimized image assets
 - `assets/video/` — optional motion-video assets
 
+## Adding more infographics
+
+See `HOW_TO_ADD_IMAGES.md` for the simple workflow. Short version: add optimized WebP files to `assets/images/`, then add one object to `data/items.json`.
+
 ## Local preview
 
 ```bash

@@ -62,7 +62,7 @@ function renderGallery() {
     card.type = 'button';
     card.setAttribute('aria-label', `Open ${item.title}`);
     card.innerHTML = `
-      <img class="card-image" src="${item.images.thumb}" alt="${item.alt}" loading="lazy" decoding="async" width="640" height="800">
+      <img class="card-image" src="${item.images.thumb}" alt="${item.alt}" loading="lazy" decoding="async" width="640" height="954">
       <div class="card-copy">
         <div class="card-kicker">${item.category}</div>
         <h2 class="card-title">${item.title}</h2>
