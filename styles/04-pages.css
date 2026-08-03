@@ -1,7 +1,8 @@
 @media (max-width: 920px) {
   :root { --grid-min: 240px; }
   .toolbar { grid-template-columns: 1fr; align-items: stretch; }
-  .filter-area { justify-content: start; }
+  .filter-area,
+  .view-switch { justify-content: start; }
   .filter-row { justify-content: flex-start; }
 }
 @media (max-width: 760px) {
@@ -46,6 +47,9 @@
     height: 15px;
   }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .swipe-view { max-width: 100%; margin-bottom: var(--space-6); }
+  .swipe-card { border-radius: var(--radius-lg); }
+  .swipe-actions { position: sticky; bottom: 12px; z-index: 4; }
   .card-copy { padding-top: 10px; }
   .card-summary { display: none; }
   .lightbox { padding: var(--space-3); }

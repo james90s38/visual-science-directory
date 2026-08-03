@@ -55,10 +55,32 @@
           <span class="filter-label">Filter</span>
           <div id="filters" class="filter-row" aria-label="Topic filters"></div>
         </div>
+        <div class="view-switch" aria-label="View mode">
+          <span class="view-switch-label">View</span>
+          <div class="view-switch-buttons">
+            <button id="gridViewButton" class="view-button" type="button" aria-pressed="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4z"/><path d="M13 4h7v7h-7z"/><path d="M4 13h7v7H4z"/><path d="M13 13h7v7h-7z"/></svg>
+              <span>Grid</span>
+            </button>
+            <button id="swipeViewButton" class="view-button" type="button" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h9a3 3 0 0 1 3 3v9"/><path d="M16 19H7a3 3 0 0 1-3-3V7"/><path d="m13 9 3 3-3 3"/></svg>
+              <span>Swipe</span>
+            </button>
+          </div>
+        </div>
       </section>
 
       <div id="topics" class="section-anchor" aria-hidden="true"></div>
       <section id="gallery" class="gallery-grid" aria-live="polite"></section>
+      <section id="swipeView" class="swipe-view" aria-live="polite" hidden>
+        <div id="swipeDeck" class="swipe-deck"></div>
+        <div class="swipe-actions" aria-label="Swipe controls">
+          <button id="swipePrevButton" class="swipe-action" type="button">Previous</button>
+          <button id="swipeOpenButton" class="swipe-action swipe-action-primary" type="button">Open</button>
+          <button id="swipeNextButton" class="swipe-action" type="button">Next</button>
+        </div>
+        <p id="swipeCounter" class="swipe-counter"></p>
+      </section>
       <p id="emptyState" class="empty-state" hidden>No topics match this search yet.</p>
       <div class="load-more-wrap">
         <button id="loadMoreButton" class="load-more" type="button" hidden>Load more</button>

@@ -60,6 +60,58 @@
   justify-content: flex-end;
   gap: 10px;
 }
+.view-switch {
+  display: grid;
+  gap: var(--space-2);
+  justify-content: end;
+}
+.view-switch-label {
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+.view-switch-buttons {
+  display: inline-flex;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(17, 17, 17, 0.04);
+}
+.view-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 12px;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 14px;
+  white-space: nowrap;
+}
+.view-button[aria-pressed="true"] {
+  background: var(--color-ink);
+  color: #ffffff;
+}
+.view-button svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.view-button svg path:first-child:last-child,
+.view-button svg path:nth-child(1):nth-last-child(4),
+.view-button svg path:nth-child(2):nth-last-child(3),
+.view-button svg path:nth-child(3):nth-last-child(2),
+.view-button svg path:nth-child(4):last-child {
+  fill: none;
+}
 .topic-card {
   border: 0;
   padding: 0;

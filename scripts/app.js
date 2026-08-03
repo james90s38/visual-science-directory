@@ -5,6 +5,8 @@ const state = {
   activeFilter: 'All',
   query: '',
   visibleCount: pageSize,
+  viewMode: 'grid',
+  swipeIndex: 0,
 };
 
 const filterIcons = {
@@ -19,11 +21,19 @@ const filterIcons = {
 };
 
 const gallery = document.querySelector('#gallery');
+const swipeView = document.querySelector('#swipeView');
+const swipeDeck = document.querySelector('#swipeDeck');
+const swipeCounter = document.querySelector('#swipeCounter');
 const filters = document.querySelector('#filters');
 const searchInput = document.querySelector('#searchInput');
 const toolbar = document.querySelector('.toolbar');
 const emptyState = document.querySelector('#emptyState');
 const loadMoreButton = document.querySelector('#loadMoreButton');
+const gridViewButton = document.querySelector('#gridViewButton');
+const swipeViewButton = document.querySelector('#swipeViewButton');
+const swipePrevButton = document.querySelector('#swipePrevButton');
+const swipeNextButton = document.querySelector('#swipeNextButton');
+const swipeOpenButton = document.querySelector('#swipeOpenButton');
 const lightbox = document.querySelector('#lightbox');
 const modalImage = document.querySelector('#modalImage');
 const modalCategory = document.querySelector('#modalCategory');
@@ -47,7 +57,24 @@ function getFilters(items) {
   return [...set];
 }
 
+function matches(item) {
+  const filterMatch = state.activeFilter === 'All' || item.tags.includes(state.activeFilter);
+  const haystack = normalize([item.title, item.question, item.takeaway, item.mechanism, item.fields.join(' '), item.tags.join(' ')].join(' '));
+  const queryMatch = !state.query || haystack.includes(normalize(state.query));
+  return filterMatch && queryMatch;
+}
+
+function getFilteredItems() {
+  return state.items.filter(matches);
+}
+
 function renderSkeleton(count = 6) {
+  gallery.hidden = false;
+  gallery.style.display = '';
+  if (swipeView) {
+    swipeView.hidden = true;
+    swipeView.style.display = 'none';
+  }
   gallery.innerHTML = '';
   for (let index = 0; index < count; index += 1) {
     const card = document.createElement('div');
@@ -72,36 +99,45 @@ function renderFilters() {
     button.addEventListener('click', () => {
       state.activeFilter = label;
       state.visibleCount = pageSize;
+      state.swipeIndex = 0;
       renderFilters();
-      renderGallery();
+      renderCurrentView();
     });
     filters.appendChild(button);
   });
 }
 
-function matches(item) {
-  const filterMatch = state.activeFilter === 'All' || item.tags.includes(state.activeFilter);
-  const haystack = normalize([item.title, item.question, item.takeaway, item.mechanism, item.fields.join(' '), item.tags.join(' ')].join(' '));
-  const queryMatch = !state.query || haystack.includes(normalize(state.query));
-  return filterMatch && queryMatch;
+function renderViewControls() {
+  gridViewButton.setAttribute('aria-pressed', String(state.viewMode === 'grid'));
+  swipeViewButton.setAttribute('aria-pressed', String(state.viewMode === 'swipe'));
+}
+
+function setViewMode(mode) {
+  state.viewMode = mode;
+  state.swipeIndex = 0;
+  renderViewControls();
+  renderCurrentView();
 }
 
 function renderGallery() {
-  const filtered = state.items.filter(matches);
+  const filtered = getFilteredItems();
   const visible = filtered.slice(0, state.visibleCount);
+  gallery.hidden = false;
+  gallery.style.display = '';
+  swipeView.hidden = true;
+  swipeView.style.display = 'none';
   gallery.innerHTML = '';
   emptyState.hidden = filtered.length > 0;
   loadMoreButton.hidden = filtered.length <= state.visibleCount;
 
-  visible.forEach((item, index) => {
-    const loadingMode = 'eager';
+  visible.forEach((item) => {
     const card = document.createElement('button');
     card.className = 'topic-card';
     card.type = 'button';
     card.setAttribute('aria-label', `Open ${item.title}`);
     card.innerHTML = `
       <div class="card-image-wrap">
-        <img class="card-image" src="${item.images.thumb}" alt="${item.alt}" loading="${loadingMode}" decoding="async" width="640" height="954">
+        <img class="card-image" src="${item.images.thumb}" alt="${item.alt}" loading="eager" decoding="async" width="640" height="954">
         <span class="card-topic-hint"><span aria-hidden="true">${iconFor(item.tags[0])}</span>${item.hint || item.category}</span>
       </div>
       <div class="card-copy">
@@ -113,6 +149,95 @@ function renderGallery() {
     card.addEventListener('click', () => openModal(item));
     gallery.appendChild(card);
   });
+}
+
+function createSwipeCard(item, className) {
+  const card = document.createElement('button');
+  card.className = `swipe-card ${className}`;
+  card.type = 'button';
+  card.setAttribute('aria-label', `Open ${item.title}`);
+  card.innerHTML = `
+    <img src="${item.images.thumb}" alt="${item.alt}" loading="eager" decoding="async" width="640" height="954">
+    <div class="swipe-card-copy">
+      <div class="swipe-card-kicker">${item.hint || item.category}</div>
+      <h2 class="swipe-card-title">${item.title}</h2>
+      <p class="swipe-card-summary">${item.takeaway}</p>
+    </div>
+  `;
+  card.addEventListener('click', () => openModal(item));
+  return card;
+}
+
+function moveSwipe(direction) {
+  const filtered = getFilteredItems();
+  if (!filtered.length) return;
+  state.swipeIndex = (state.swipeIndex + direction + filtered.length) % filtered.length;
+  renderSwipeView();
+}
+
+function setupSwipeGesture(card) {
+  let startX = 0;
+  let startY = 0;
+  let dragging = false;
+
+  card.addEventListener('pointerdown', (event) => {
+    dragging = true;
+    startX = event.clientX;
+    startY = event.clientY;
+    card.setPointerCapture(event.pointerId);
+  });
+
+  card.addEventListener('pointermove', (event) => {
+    if (!dragging) return;
+    const dx = event.clientX - startX;
+    const dy = event.clientY - startY;
+    if (Math.abs(dx) < Math.abs(dy)) return;
+    card.style.transform = `translateX(${dx}px) rotate(${dx / 22}deg)`;
+  });
+
+  card.addEventListener('pointerup', (event) => {
+    if (!dragging) return;
+    dragging = false;
+    const dx = event.clientX - startX;
+    card.style.transform = '';
+    if (Math.abs(dx) > 70) moveSwipe(dx > 0 ? -1 : 1);
+  });
+}
+
+function renderSwipeView() {
+  const filtered = getFilteredItems();
+  gallery.hidden = true;
+  gallery.style.display = 'none';
+  swipeView.hidden = false;
+  swipeView.style.display = 'block';
+  loadMoreButton.hidden = true;
+  emptyState.hidden = filtered.length > 0;
+  swipeDeck.innerHTML = '';
+
+  if (!filtered.length) {
+    swipeCounter.textContent = '';
+    return;
+  }
+
+  if (state.swipeIndex >= filtered.length) state.swipeIndex = 0;
+  const current = filtered[state.swipeIndex];
+  const next = filtered[(state.swipeIndex + 1) % filtered.length];
+  const third = filtered[(state.swipeIndex + 2) % filtered.length];
+
+  if (filtered.length > 2) swipeDeck.appendChild(createSwipeCard(third, 'swipe-card-third'));
+  if (filtered.length > 1) swipeDeck.appendChild(createSwipeCard(next, 'swipe-card-next'));
+  const mainCard = createSwipeCard(current, 'swipe-card-main');
+  setupSwipeGesture(mainCard);
+  swipeDeck.appendChild(mainCard);
+  swipeCounter.textContent = `${state.swipeIndex + 1} of ${filtered.length}`;
+}
+
+function renderCurrentView() {
+  if (state.viewMode === 'swipe') {
+    renderSwipeView();
+  } else {
+    renderGallery();
+  }
 }
 
 function openModal(item) {
@@ -147,17 +272,30 @@ document.querySelector('#closeLightbox').addEventListener('click', closeModal);
 document.querySelector('#modalCloseButton').addEventListener('click', closeModal);
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeModal();
+  if (lightbox.classList.contains('is-open') || state.viewMode !== 'swipe') return;
+  if (event.key === 'ArrowRight') moveSwipe(1);
+  if (event.key === 'ArrowLeft') moveSwipe(-1);
 });
 
 searchInput.addEventListener('input', (event) => {
   state.query = event.target.value;
   state.visibleCount = pageSize;
-  renderGallery();
+  state.swipeIndex = 0;
+  renderCurrentView();
 });
 
 loadMoreButton.addEventListener('click', () => {
   state.visibleCount += pageSize;
   renderGallery();
+});
+
+gridViewButton.addEventListener('click', () => setViewMode('grid'));
+swipeViewButton.addEventListener('click', () => setViewMode('swipe'));
+swipePrevButton.addEventListener('click', () => moveSwipe(-1));
+swipeNextButton.addEventListener('click', () => moveSwipe(1));
+swipeOpenButton.addEventListener('click', () => {
+  const filtered = getFilteredItems();
+  if (filtered.length) openModal(filtered[state.swipeIndex]);
 });
 
 let lastScrollY = window.scrollY;
@@ -193,13 +331,14 @@ window.addEventListener('scroll', updateToolbarVisibility, { passive: true });
 window.addEventListener('resize', updateToolbarVisibility);
 
 renderSkeleton();
+renderViewControls();
 
 fetch('data/items.json')
   .then((response) => response.json())
   .then((items) => {
     state.items = items;
     renderFilters();
-    renderGallery();
+    renderCurrentView();
   })
   .catch((error) => {
     console.error('Failed to load items', error);
