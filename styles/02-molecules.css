@@ -18,9 +18,22 @@
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
   color: var(--color-muted);
-  font-size: 20px;
   pointer-events: none;
+}
+.search-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .search-field input {
   width: 100%;
@@ -41,7 +54,12 @@
   justify-content: end;
   gap: var(--space-2);
 }
-.filter-row { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-2); }
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
 .topic-card {
   border: 0;
   padding: 0;

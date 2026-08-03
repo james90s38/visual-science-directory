@@ -28,21 +28,45 @@ button { cursor: pointer; }
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 10px;
   border: 1px solid var(--color-line);
   background: var(--color-chip);
   color: var(--color-ink);
   border-radius: 999px;
-  padding: 9px 14px;
-  min-height: 40px;
+  padding: 8px 16px 8px 10px;
+  min-height: 46px;
   line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(17, 17, 17, 0.04);
 }
 .chip[aria-pressed="true"] {
   background: var(--color-chip-active);
   border-color: var(--color-chip-active);
   color: var(--color-chip-active-text);
 }
-.chip-icon { font-size: 15px; line-height: 1; }
+.chip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(21, 21, 21, 0.06);
+  color: currentColor;
+  flex: 0 0 24px;
+}
+.chip[aria-pressed="true"] .chip-icon {
+  background: rgba(255, 255, 255, 0.16);
+}
+.chip-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .icon-button {
   display: grid;
   place-items: center;

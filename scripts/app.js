@@ -8,19 +8,20 @@ const state = {
 };
 
 const filterIcons = {
-  All: '✦',
-  Biology: '☘',
-  Chemistry: '⚗',
-  Neuroscience: '◌',
-  Physics: '⌁',
-  Atmosphere: '☁',
-  Space: '◐',
-  Senses: '◍',
+  All: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z"/></svg>',
+  Biology: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20c-4.4 0-8-3.6-8-8 0-3.6 2.4-6.7 5.7-7.7C9.4 7.8 10.6 9 12 9s2.6-1.2 2.3-4.7C17.6 5.3 20 8.4 20 12c0 4.4-3.6 8-8 8Z"/><path d="M12 9v11"/></svg>',
+  Chemistry: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3v6.2L5.8 16A3 3 0 0 0 8.5 20h7a3 3 0 0 0 2.7-4l-4.2-6.8V3"/><path d="M8 13h8"/></svg>',
+  Neuroscience: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5a2.5 2.5 0 1 1 5 0 2.5 2.5 0 1 1-5 0Z"/><path d="M12 9v6"/><path d="M8.5 12.5 6 15"/><path d="M15.5 12.5 18 15"/><path d="M9 18H7"/><path d="M17 18h-2"/></svg>',
+  Physics: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 14 5-4 3 4 8-6"/><path d="M17 8h3v3"/></svg>',
+  Atmosphere: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17h9a3 3 0 1 0-.6-5.9A4.5 4.5 0 0 0 7 12.5 2.5 2.5 0 0 0 7 17Z"/></svg>',
+  Space: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a8 8 0 1 0 0 16c3.5 0 6.6-2.2 7.6-5.4A7 7 0 0 1 12 4Z"/></svg>',
+  Senses: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.5-5 9-5 9 5 9 5-3.5 5-9 5-9-5-9-5Z"/><path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>',
 };
 
 const gallery = document.querySelector('#gallery');
 const filters = document.querySelector('#filters');
 const searchInput = document.querySelector('#searchInput');
+const toolbar = document.querySelector('.toolbar');
 const emptyState = document.querySelector('#emptyState');
 const loadMoreButton = document.querySelector('#loadMoreButton');
 const lightbox = document.querySelector('#lightbox');
@@ -37,7 +38,7 @@ const modalVideo = document.querySelector('#modalVideo');
 const normalize = (value) => value.toLowerCase().trim();
 
 function iconFor(label) {
-  return filterIcons[label] || '•';
+  return filterIcons[label] || filterIcons.All;
 }
 
 function getFilters(items) {
@@ -158,6 +159,37 @@ loadMoreButton.addEventListener('click', () => {
   state.visibleCount += pageSize;
   renderGallery();
 });
+
+let lastScrollY = window.scrollY;
+let toolbarHidden = false;
+
+function updateToolbarVisibility() {
+  if (!toolbar) return;
+
+  const current = window.scrollY;
+  const delta = current - lastScrollY;
+  const isMobile = window.innerWidth <= 760;
+
+  if (!isMobile || current < 96) {
+    toolbar.classList.remove('is-hidden');
+    toolbarHidden = false;
+    lastScrollY = current;
+    return;
+  }
+
+  if (delta > 10 && !toolbarHidden) {
+    toolbar.classList.add('is-hidden');
+    toolbarHidden = true;
+  } else if (delta < -8 && toolbarHidden) {
+    toolbar.classList.remove('is-hidden');
+    toolbarHidden = false;
+  }
+
+  lastScrollY = current;
+}
+
+window.addEventListener('scroll', updateToolbarVisibility, { passive: true });
+window.addEventListener('resize', updateToolbarVisibility);
 
 renderSkeleton();
 
