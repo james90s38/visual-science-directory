@@ -169,21 +169,19 @@ function updateToolbarVisibility() {
   const current = window.scrollY;
   const delta = current - lastScrollY;
   const isMobile = window.innerWidth <= 760;
-  const galleryTop = gallery ? gallery.offsetTop : 0;
-  const hideBeforeGrid = Math.round(window.innerHeight * 0.25);
-  const hideAfterApproachingGrid = Math.max(180, galleryTop - hideBeforeGrid);
+  const toolbarStart = Math.max(0, toolbar.offsetTop - 8);
 
-  if (!isMobile || current < hideAfterApproachingGrid) {
+  if (!isMobile || current <= toolbarStart) {
     toolbar.classList.remove('is-hidden');
     toolbarHidden = false;
     lastScrollY = current;
     return;
   }
 
-  if (delta > 10 && !toolbarHidden) {
+  if (delta > 2 && !toolbarHidden) {
     toolbar.classList.add('is-hidden');
     toolbarHidden = true;
-  } else if (delta < -8 && toolbarHidden) {
+  } else if (delta < -2 && toolbarHidden) {
     toolbar.classList.remove('is-hidden');
     toolbarHidden = false;
   }
