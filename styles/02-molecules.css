@@ -1,0 +1,94 @@
+.search-field {
+  display: grid;
+  gap: var(--space-2);
+  flex: 1 1 360px;
+}
+.search-field span,
+.filter-label {
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.search-field input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--color-ink);
+  padding: 0 18px;
+  outline: none;
+}
+.search-field input:focus {
+  border-color: #b8b0a2;
+  box-shadow: 0 0 0 4px rgba(21, 21, 21, 0.06);
+}
+.filter-area { display: grid; gap: var(--space-2); }
+.filter-row { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.topic-card {
+  border: 0;
+  padding: 0;
+  text-align: left;
+  background: transparent;
+}
+.topic-card:focus-visible {
+  outline: 3px solid rgba(21, 21, 21, 0.28);
+  outline-offset: 6px;
+  border-radius: var(--radius-lg);
+}
+.card-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: var(--radius-lg);
+  background: var(--color-soft);
+  box-shadow: var(--shadow-card);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.topic-card:hover .card-image {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px rgba(17, 17, 17, 0.12);
+}
+.card-copy { padding: var(--space-4) var(--space-1) 0; }
+.card-kicker {
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.card-title {
+  margin: 7px 0 0;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.card-summary {
+  margin: 8px 0 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.detail-list {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+}
+.detail-list div {
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-3);
+}
+.detail-list dt {
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.detail-list dd {
+  margin: 6px 0 0;
+  line-height: 1.45;
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A clean directory of visual science infographics that explain everyday questions through beautiful images and simple explanations." />
+    <title>Visual Science Directory</title>
+    <link rel="preload" href="styles/00-tokens.css" as="style" />
+    <link rel="stylesheet" href="styles/00-tokens.css" />
+    <link rel="stylesheet" href="styles/01-atoms.css" />
+    <link rel="stylesheet" href="styles/02-molecules.css" />
+    <link rel="stylesheet" href="styles/03-organisms.css" />
+    <link rel="stylesheet" href="styles/04-pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#gallery">Skip to gallery</a>
+
+    <header class="site-header">
+      <div class="site-kicker">Visual Science Directory</div>
+      <div class="site-heading-row">
+        <h1>Scientific ideas, explained as beautiful infographics.</h1>
+        <p class="site-intro">A fast visual library for everyday science: biology, chemistry, physics, and the hidden mechanisms behind familiar things.</p>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="toolbar" aria-label="Search and filters">
+        <label class="search-field">
+          <span>Search topics</span>
+          <input id="searchInput" type="search" placeholder="Search mint, menthol, receptors..." autocomplete="off" />
+        </label>
+        <div class="filter-area">
+          <span class="filter-label">Filter</span>
+          <div id="filters" class="filter-row" aria-label="Topic filters"></div>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery-grid" aria-live="polite"></section>
+      <p id="emptyState" class="empty-state" hidden>No topics match this search yet.</p>
+    </main>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button id="closeLightbox" class="lightbox-backdrop" aria-label="Close preview"></button>
+      <article class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button id="modalCloseButton" class="icon-button" aria-label="Close">×</button>
+        <div class="lightbox-image-wrap">
+          <img id="modalImage" alt="" decoding="async" />
+        </div>
+        <div class="lightbox-copy">
+          <div id="modalCategory" class="detail-kicker"></div>
+          <h2 id="modalTitle"></h2>
+          <p id="modalTakeaway" class="detail-takeaway"></p>
+          <dl class="detail-list">
+            <div><dt>Key mechanism</dt><dd id="modalMechanism"></dd></div>
+            <div><dt>Fields</dt><dd id="modalFields"></dd></div>
+            <div><dt>Status</dt><dd id="modalStatus"></dd></div>
+          </dl>
+          <p id="modalDescription" class="detail-description"></p>
+          <a id="modalVideo" class="text-link" href="#" target="_blank" rel="noreferrer">Open motion-video version</a>
+        </div>
+      </article>
+    </div>
+
+    <script src="scripts/app.js" defer></script>
+  </body>
+</html>

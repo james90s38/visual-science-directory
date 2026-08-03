@@ -1,0 +1,20 @@
+[
+  {
+    "id": "why-mint-feels-cold",
+    "title": "Why mint feels cold",
+    "question": "Why does mint feel icy without making anything colder?",
+    "category": "Everyday Biology",
+    "tags": ["Biology", "Chemistry", "Neuroscience"],
+    "takeaway": "Mint does not lower temperature. Menthol activates cold receptors, so your brain reads the signal as cold.",
+    "mechanism": "Menthol activates the TRPM8 cold receptor in the mouth and skin.",
+    "fields": ["plant chemistry", "sensory receptors", "neuroscience"],
+    "status": "Approved source image and motion-video v3 available.",
+    "description": "This topic turns a familiar sensation into a compact science story: a plant compound, a receptor, and the brain's interpretation of temperature. It is the first canonical item for the directory.",
+    "alt": "Premium infographic explaining why mint feels cold through menthol and TRPM8 cold receptors.",
+    "images": {
+      "thumb": "assets/images/mint-thumb.webp",
+      "large": "assets/images/mint-large.webp"
+    },
+    "video": "assets/video/mint-infographic-motion-premium-v3.mp4"
+  }
+]

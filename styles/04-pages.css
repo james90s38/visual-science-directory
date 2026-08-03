@@ -1,0 +1,17 @@
+@media (max-width: 760px) {
+  .site-header { padding-top: var(--space-7); }
+  .site-heading-row { grid-template-columns: 1fr; gap: var(--space-4); }
+  .toolbar { position: static; display: grid; align-items: stretch; }
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .card-copy { padding-top: 10px; }
+  .card-summary { display: none; }
+  .lightbox { padding: var(--space-3); }
+  .lightbox-panel { grid-template-columns: 1fr; gap: var(--space-4); padding: var(--space-3); border-radius: var(--radius-lg); }
+  .lightbox-copy { padding: 0 var(--space-2) var(--space-3); }
+}
+@media (max-width: 420px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+}
