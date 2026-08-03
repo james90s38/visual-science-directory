@@ -101,11 +101,15 @@
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow-toolbar);
-  transition: transform 220ms ease, opacity 220ms ease, box-shadow 220ms ease;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  will-change: opacity, transform;
 }
 .toolbar.is-hidden {
-  transform: translateY(calc(-100% - 12px));
+  transform: translateY(-8px);
   opacity: 0;
+  box-shadow: none;
   pointer-events: none;
 }
 .gallery-grid {
