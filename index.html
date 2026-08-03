@@ -15,8 +15,26 @@
   <body>
     <a class="skip-link" href="#gallery">Skip to gallery</a>
 
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="Visual Science Directory home">
+        <span class="brand-mark">✦</span>
+        <span>Visual science</span>
+      </a>
+      <div class="nav-links">
+        <a href="#gallery">Gallery</a>
+        <a href="HOW_TO_ADD_IMAGES.md">Add topics</a>
+      </div>
+    </nav>
+
     <header class="site-header">
-      <div class="site-kicker">Visual Science Directory</div>
+      <div class="floating-icons" aria-hidden="true">
+        <span class="float-icon float-icon-a">✧</span>
+        <span class="float-icon float-icon-b">⚗</span>
+        <span class="float-icon float-icon-c">◌</span>
+        <span class="float-icon float-icon-d">⌁</span>
+        <span class="float-icon float-icon-e">✦</span>
+      </div>
+      <div class="site-kicker">Visual science directory</div>
       <div class="site-heading-row">
         <h1>Scientific ideas explained<br>as beautiful infographics.</h1>
         <p class="site-intro">A fast visual library for everyday science: biology, chemistry, physics, and the hidden mechanisms behind familiar things.</p>
@@ -27,7 +45,10 @@
       <section class="toolbar" aria-label="Search and filters">
         <label class="search-field">
           <span>Search topics</span>
-          <input id="searchInput" type="search" placeholder="Search mint, menthol, receptors..." autocomplete="off" />
+          <span class="search-input-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="Search mint, receptors, sky..." autocomplete="off" />
+          </span>
         </label>
         <div class="filter-area">
           <span class="filter-label">Filter</span>
@@ -37,6 +58,9 @@
 
       <section id="gallery" class="gallery-grid" aria-live="polite"></section>
       <p id="emptyState" class="empty-state" hidden>No topics match this search yet.</p>
+      <div class="load-more-wrap">
+        <button id="loadMoreButton" class="load-more" type="button" hidden>Load more</button>
+      </div>
     </main>
 
     <div id="lightbox" class="lightbox" aria-hidden="true">

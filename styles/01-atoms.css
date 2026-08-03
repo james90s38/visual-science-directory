@@ -9,6 +9,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button, input { font: inherit; }
 button { cursor: pointer; }
@@ -25,6 +26,9 @@ button { cursor: pointer; }
 }
 .skip-link:focus { top: 16px; }
 .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   border: 1px solid var(--color-line);
   background: var(--color-chip);
   color: var(--color-ink);
@@ -38,6 +42,7 @@ button { cursor: pointer; }
   border-color: var(--color-chip-active);
   color: var(--color-chip-active-text);
 }
+.chip-icon { font-size: 15px; line-height: 1; }
 .icon-button {
   display: grid;
   place-items: center;
@@ -54,4 +59,14 @@ button { cursor: pointer; }
   color: var(--color-ink);
   text-underline-offset: 4px;
   font-weight: 700;
+  text-decoration: underline;
+}
+.load-more {
+  border: 1px solid var(--color-line);
+  background: #ffffff;
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 0 18px;
+  color: var(--color-ink);
+  box-shadow: 0 8px 20px rgba(17, 17, 17, 0.05);
 }
