@@ -21,8 +21,9 @@
         <span>Visual science</span>
       </a>
       <div class="nav-links">
-        <a href="#gallery">Gallery</a>
-        <a href="HOW_TO_ADD_IMAGES.md">Add topics</a>
+        <a href="#explore">Explore</a>
+        <a href="#topics">Topics</a>
+        <a href="#about">About</a>
       </div>
     </nav>
 
@@ -42,7 +43,7 @@
     </header>
 
     <main class="page-shell">
-      <section class="toolbar" aria-label="Search and filters">
+      <section id="explore" class="toolbar" aria-label="Search and filters">
         <label class="search-field">
           <span>Search topics</span>
           <span class="search-input-wrap">
@@ -56,11 +57,16 @@
         </div>
       </section>
 
+      <div id="topics" class="section-anchor" aria-hidden="true"></div>
       <section id="gallery" class="gallery-grid" aria-live="polite"></section>
       <p id="emptyState" class="empty-state" hidden>No topics match this search yet.</p>
       <div class="load-more-wrap">
         <button id="loadMoreButton" class="load-more" type="button" hidden>Load more</button>
       </div>
+
+      <section id="about" class="about-panel" aria-label="About this library">
+        <p>Visual Science is a simple library of beautiful explainers for everyday science. Search a question, browse by field, then open any infographic for the full idea.</p>
+      </section>
     </main>
 
     <div id="lightbox" class="lightbox" aria-hidden="true">
