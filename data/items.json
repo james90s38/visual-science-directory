@@ -26,6 +26,65 @@
     "video": "assets/video/mint-infographic-motion-premium-v3.mp4"
   },
   {
+    "id": "soap-washes-germs-away",
+    "title": "How soap washes oily germs away",
+    "question": "How does soap help wash oily germs away?",
+    "category": "Biology",
+    "tags": [
+      "soap",
+      "germs",
+      "hygiene",
+      "molecules",
+      "water",
+      "biology"
+    ],
+    "takeaway": "Soap molecules loosen oily shells and let water carry the pieces away.",
+    "mechanism": "Soap has water-loving heads and oil-loving tails. The tails grip oily membranes and grime while the heads stay in water, pulling the oily layer apart into tiny pieces that rinse away.",
+    "fields": [
+      "Biology",
+      "Chemistry",
+      "Health"
+    ],
+    "status": "Kie sample",
+    "description": "A macro-biology style infographic showing soap molecules surrounding an oily microscopic particle, loosening its shell, and letting water rinse fragments away.",
+    "alt": "Infographic explaining how soap molecules loosen oily germs and help water rinse them away.",
+    "images": {
+      "thumb": "assets/images/soap-washes-germs-thumb.webp",
+      "large": "assets/images/soap-washes-germs-large.webp"
+    },
+    "video": null
+  },
+  {
+    "id": "cold-drains-phone-batteries",
+    "title": "Why cold drains phone batteries",
+    "question": "Why does phone battery drop faster in the cold?",
+    "category": "Technology",
+    "tags": [
+      "battery",
+      "phone",
+      "cold",
+      "lithium ion",
+      "voltage",
+      "technology",
+      "chemistry"
+    ],
+    "takeaway": "Cold slows ion movement, voltage drops, and the phone reports less battery.",
+    "mechanism": "Low temperature increases resistance inside a lithium-ion battery. Ions move more slowly, so voltage falls under load and the phone reads that lower voltage as less remaining charge. Some apparent battery can return after warming.",
+    "fields": [
+      "Technology",
+      "Chemistry",
+      "Physics"
+    ],
+    "status": "Kie sample",
+    "description": "A dark premium tech cutaway infographic showing lithium ions moving quickly in warmth and slowly in cold, causing voltage and reported battery to drop.",
+    "alt": "Infographic explaining why cold slows lithium-ion movement and makes phone battery appear lower.",
+    "images": {
+      "thumb": "assets/images/battery-cold-thumb.webp",
+      "large": "assets/images/battery-cold-large.webp"
+    },
+    "video": null
+  },
+  {
     "id": "onion-tears",
     "title": "Why onions make you cry",
     "question": "Why onions make you cry?",

@@ -18,6 +18,7 @@ const filterIcons = {
   Atmosphere: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17h9a3 3 0 1 0-.6-5.9A4.5 4.5 0 0 0 7 12.5 2.5 2.5 0 0 0 7 17Z"/></svg>',
   Space: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a8 8 0 1 0 0 16c3.5 0 6.6-2.2 7.6-5.4A7 7 0 0 1 12 4Z"/></svg>',
   Senses: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.5-5 9-5 9 5 9 5-3.5 5-9 5-9-5-9-5Z"/><path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>',
+  Technology: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7h8a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M18 11h2v2h-2"/><path d="M9 11h3"/><path d="M14 11h1"/></svg>',
 };
 
 const gallery = document.querySelector('#gallery');
@@ -53,12 +54,12 @@ function iconFor(label) {
 
 function getFilters(items) {
   const set = new Set(['All']);
-  items.forEach((item) => item.tags.forEach((tag) => set.add(tag)));
+  items.forEach((item) => set.add(item.category));
   return [...set];
 }
 
 function matches(item) {
-  const filterMatch = state.activeFilter === 'All' || item.tags.includes(state.activeFilter);
+  const filterMatch = state.activeFilter === 'All' || item.category === state.activeFilter || item.fields.includes(state.activeFilter);
   const haystack = normalize([item.title, item.question, item.takeaway, item.mechanism, item.fields.join(' '), item.tags.join(' ')].join(' '));
   const queryMatch = !state.query || haystack.includes(normalize(state.query));
   return filterMatch && queryMatch;
