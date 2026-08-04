@@ -26,35 +26,6 @@
     "video": "assets/video/mint-infographic-motion-premium-v3.mp4"
   },
   {
-    "id": "soap-washes-germs-away",
-    "title": "How soap washes oily germs away",
-    "question": "How does soap help wash oily germs away?",
-    "category": "Biology",
-    "tags": [
-      "soap",
-      "germs",
-      "hygiene",
-      "molecules",
-      "water",
-      "biology"
-    ],
-    "takeaway": "Soap molecules loosen oily shells and let water carry the pieces away.",
-    "mechanism": "Soap has water-loving heads and oil-loving tails. The tails grip oily membranes and grime while the heads stay in water, pulling the oily layer apart into tiny pieces that rinse away.",
-    "fields": [
-      "Biology",
-      "Chemistry",
-      "Health"
-    ],
-    "status": "Kie sample",
-    "description": "A macro-biology style infographic showing soap molecules surrounding an oily microscopic particle, loosening its shell, and letting water rinse fragments away.",
-    "alt": "Infographic explaining how soap molecules loosen oily germs and help water rinse them away.",
-    "images": {
-      "thumb": "assets/images/soap-washes-germs-thumb.webp",
-      "large": "assets/images/soap-washes-germs-large.webp"
-    },
-    "video": null
-  },
-  {
     "id": "cold-drains-phone-batteries",
     "title": "Why cold drains phone batteries",
     "question": "Why does phone battery drop faster in the cold?",
@@ -75,7 +46,7 @@
       "Chemistry",
       "Physics"
     ],
-    "status": "Kie sample",
+    "status": "Kie AI generated sample",
     "description": "A dark premium tech cutaway infographic showing lithium ions moving quickly in warmth and slowly in cold, causing voltage and reported battery to drop.",
     "alt": "Infographic explaining why cold slows lithium-ion movement and makes phone battery appear lower.",
     "images": {
@@ -83,153 +54,5 @@
       "large": "assets/images/battery-cold-large.webp"
     },
     "video": null
-  },
-  {
-    "id": "onion-tears",
-    "title": "Why onions make you cry",
-    "question": "Why onions make you cry?",
-    "category": "Chemistry",
-    "tags": [
-      "Chemistry",
-      "Biology",
-      "Senses"
-    ],
-    "hint": "Onion chemistry",
-    "takeaway": "Cut onions release sulfur chemistry that irritates your eyes and triggers tears.",
-    "mechanism": "Enzymes transform sulfur compounds into a volatile eye irritant.",
-    "fields": [
-      "plant chemistry",
-      "sensory irritation"
-    ],
-    "status": "Fresh visual draft created in code.",
-    "description": "A self-contained visual explanation designed for quick understanding in the directory grid and a deeper read in the detail view.",
-    "alt": "Infographic explaining why onions make you cry.",
-    "images": {
-      "thumb": "assets/images/onion-tears-thumb.webp",
-      "large": "assets/images/onion-tears-large.webp"
-    }
-  },
-  {
-    "id": "chili-heat",
-    "title": "Why chili feels hot",
-    "question": "Why chili feels hot?",
-    "category": "Sensory biology",
-    "tags": [
-      "Biology",
-      "Chemistry",
-      "Senses"
-    ],
-    "hint": "Heat illusion",
-    "takeaway": "Capsaicin activates a heat receptor, so your brain reads spice as burning.",
-    "mechanism": "Capsaicin binds TRPV1, a receptor involved in heat and pain signals.",
-    "fields": [
-      "neuroscience",
-      "food chemistry"
-    ],
-    "status": "Fresh visual draft created in code.",
-    "description": "A self-contained visual explanation designed for quick understanding in the directory grid and a deeper read in the detail view.",
-    "alt": "Infographic explaining why chili feels hot.",
-    "images": {
-      "thumb": "assets/images/chili-heat-thumb.webp",
-      "large": "assets/images/chili-heat-large.webp"
-    }
-  },
-  {
-    "id": "sky-blue",
-    "title": "Why the sky is blue",
-    "question": "Why the sky is blue?",
-    "category": "Atmospheric physics",
-    "tags": [
-      "Physics",
-      "Atmosphere"
-    ],
-    "hint": "Light scattering",
-    "takeaway": "Air scatters blue light more strongly, sending blue into your eyes from many directions.",
-    "mechanism": "Rayleigh scattering favors shorter blue wavelengths over longer red wavelengths.",
-    "fields": [
-      "light",
-      "atmosphere"
-    ],
-    "status": "Fresh visual draft created in code.",
-    "description": "A self-contained visual explanation designed for quick understanding in the directory grid and a deeper read in the detail view.",
-    "alt": "Infographic explaining why the sky is blue.",
-    "images": {
-      "thumb": "assets/images/sky-blue-thumb.webp",
-      "large": "assets/images/sky-blue-large.webp"
-    }
-  },
-  {
-    "id": "caffeine-awake",
-    "title": "How caffeine keeps you awake",
-    "question": "How caffeine keeps you awake?",
-    "category": "Neuroscience",
-    "tags": [
-      "Neuroscience",
-      "Chemistry",
-      "Biology"
-    ],
-    "hint": "Signal blocker",
-    "takeaway": "Caffeine blocks adenosine, delaying the signal that makes you feel tired.",
-    "mechanism": "Caffeine competes with adenosine at receptors linked to sleep pressure.",
-    "fields": [
-      "brain chemistry",
-      "receptors"
-    ],
-    "status": "Fresh visual draft created in code.",
-    "description": "A self-contained visual explanation designed for quick understanding in the directory grid and a deeper read in the detail view.",
-    "alt": "Infographic explaining how caffeine keeps you awake.",
-    "images": {
-      "thumb": "assets/images/caffeine-awake-thumb.webp",
-      "large": "assets/images/caffeine-awake-large.webp"
-    }
-  },
-  {
-    "id": "rain-smell",
-    "title": "Why rain smells earthy",
-    "question": "Why rain smells earthy?",
-    "category": "Earth science",
-    "tags": [
-      "Atmosphere",
-      "Chemistry",
-      "Biology"
-    ],
-    "hint": "Petrichor",
-    "takeaway": "Rain releases tiny scent-carrying droplets from soil into the air.",
-    "mechanism": "Raindrops aerosolize compounds like geosmin from soil and microbes.",
-    "fields": [
-      "soil chemistry",
-      "aerosols"
-    ],
-    "status": "Fresh visual draft created in code.",
-    "description": "A self-contained visual explanation designed for quick understanding in the directory grid and a deeper read in the detail view.",
-    "alt": "Infographic explaining why rain smells earthy.",
-    "images": {
-      "thumb": "assets/images/rain-smell-thumb.webp",
-      "large": "assets/images/rain-smell-large.webp"
-    }
-  },
-  {
-    "id": "dark-matter",
-    "title": "Why galaxies reveal invisible matter",
-    "question": "Why galaxies reveal invisible matter?",
-    "category": "Space physics",
-    "tags": [
-      "Physics",
-      "Space"
-    ],
-    "hint": "Invisible gravity",
-    "takeaway": "Galaxy motion suggests there is more mass than what telescopes can see.",
-    "mechanism": "Orbital speeds imply additional gravitational mass around galaxies.",
-    "fields": [
-      "gravity",
-      "cosmology"
-    ],
-    "status": "Fresh visual draft created in code.",
-    "description": "A self-contained visual explanation designed for quick understanding in the directory grid and a deeper read in the detail view.",
-    "alt": "Infographic explaining why galaxies reveal invisible matter.",
-    "images": {
-      "thumb": "assets/images/dark-matter-thumb.webp",
-      "large": "assets/images/dark-matter-large.webp"
-    }
   }
 ]
