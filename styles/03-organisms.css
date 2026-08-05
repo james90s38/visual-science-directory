@@ -98,9 +98,9 @@
   gap: var(--space-6);
   margin-bottom: var(--space-7);
   padding: var(--space-4) 0;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-toolbar);
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
   opacity: 1;
   transform: translateY(0);
   transition: opacity 180ms ease, transform 180ms ease, box-shadow 180ms ease;
