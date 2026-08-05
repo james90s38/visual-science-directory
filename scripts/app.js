@@ -19,6 +19,8 @@ const filterIcons = {
   Space: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a8 8 0 1 0 0 16c3.5 0 6.6-2.2 7.6-5.4A7 7 0 0 1 12 4Z"/></svg>',
   Senses: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.5-5 9-5 9 5 9 5-3.5 5-9 5-9-5-9-5Z"/><path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>',
   Technology: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7h8a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M18 11h2v2h-2"/><path d="M9 11h3"/><path d="M14 11h1"/></svg>',
+  Engineering: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16"/><path d="M6 18l5-12h2l5 12"/><path d="M8 13h8"/><path d="M9.5 9h5"/></svg>',
+  'Plant Biology': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c8 0 13-5 14-14-9 1-14 6-14 14Z"/><path d="M5 19c3-5 7-8 12-11"/></svg>',
 };
 
 const gallery = document.querySelector('#gallery');

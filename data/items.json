@@ -54,5 +54,151 @@
       "large": "assets/images/battery-cold-large.webp"
     },
     "video": null
+  },
+  {
+    "id": "science-of-caffeine",
+    "title": "The science of caffeine",
+    "question": "How does caffeine trick your brain into feeling alert?",
+    "category": "Neuroscience",
+    "tags": [
+      "caffeine",
+      "coffee",
+      "adenosine",
+      "brain",
+      "alertness",
+      "neuroscience",
+      "chemistry"
+    ],
+    "takeaway": "Caffeine does not give the brain energy. It blocks adenosine signals that normally make you feel sleepy.",
+    "mechanism": "Caffeine crosses into the brain and binds to adenosine receptors without activating them, reducing the sleepy signal and making alertness feel stronger.",
+    "fields": [
+      "Neuroscience",
+      "Chemistry",
+      "Everyday Biology"
+    ],
+    "description": "A detailed dark editorial infographic showing caffeine chemistry, coffee sources, adenosine receptor blocking, alertness effects, duration, and side effects.",
+    "alt": "Dark premium infographic explaining how caffeine blocks adenosine receptors and affects alertness.",
+    "status": "User-uploaded AI infographic",
+    "images": {
+      "thumb": "assets/images/science-of-caffeine-thumb.webp",
+      "large": "assets/images/science-of-caffeine-large.webp"
+    },
+    "video": null
+  },
+  {
+    "id": "airplane-round-windows",
+    "title": "Why airplane windows are round",
+    "question": "Why are airplane windows rounded instead of square?",
+    "category": "Engineering",
+    "tags": [
+      "airplane",
+      "windows",
+      "stress",
+      "pressure",
+      "engineering",
+      "flight",
+      "cracks"
+    ],
+    "takeaway": "Rounded windows spread stress more evenly, while sharp square corners can concentrate stress and increase crack risk.",
+    "mechanism": "Cabin pressure pushes outward on the fuselage. Curved window edges distribute that stress instead of focusing it at sharp corners.",
+    "fields": [
+      "Engineering",
+      "Physics"
+    ],
+    "description": "A clean engineering infographic comparing square and round airplane windows under cabin pressure and showing how stress lines flow around rounded edges.",
+    "alt": "Infographic explaining how rounded airplane windows spread cabin-pressure stress and reduce crack risk.",
+    "status": "User-uploaded AI infographic",
+    "images": {
+      "thumb": "assets/images/airplane-round-windows-thumb.webp",
+      "large": "assets/images/airplane-round-windows-large.webp"
+    },
+    "video": null
+  },
+  {
+    "id": "brain-freeze",
+    "title": "Why brain freeze happens",
+    "question": "Why does cold food cause forehead pain?",
+    "category": "Neuroscience",
+    "tags": [
+      "brain freeze",
+      "ice cream",
+      "trigeminal nerve",
+      "forehead pain",
+      "nerves",
+      "blood vessels"
+    ],
+    "takeaway": "Brain freeze is not pain inside the brain. Cold in the mouth triggers nerve signals that the brain interprets as forehead pain.",
+    "mechanism": "Cold touches the roof of the mouth, blood vessels react quickly, and the trigeminal nerve carries a referred pain signal toward the forehead.",
+    "fields": [
+      "Neuroscience",
+      "Everyday Biology"
+    ],
+    "description": "A clean medical-style infographic showing cold stimulation in the mouth, vascular response, trigeminal nerve signaling, and referred forehead pain.",
+    "alt": "Infographic explaining how cold on the roof of the mouth triggers trigeminal nerve signals felt as forehead pain.",
+    "status": "User-uploaded AI infographic",
+    "images": {
+      "thumb": "assets/images/brain-freeze-thumb.webp",
+      "large": "assets/images/brain-freeze-large.webp"
+    },
+    "video": null
+  },
+  {
+    "id": "glass-transparent",
+    "title": "Why glass is transparent",
+    "question": "Why can visible light pass through glass?",
+    "category": "Physics",
+    "tags": [
+      "glass",
+      "transparent",
+      "visible light",
+      "atoms",
+      "energy gap",
+      "materials science",
+      "optics"
+    ],
+    "takeaway": "Glass is transparent because visible light usually does not have the right energy to be absorbed by its atomic structure.",
+    "mechanism": "The electronic structure of glass leaves a large energy gap for visible wavelengths, so visible light passes through while some ultraviolet and infrared light are absorbed.",
+    "fields": [
+      "Physics",
+      "Chemistry",
+      "Materials Science"
+    ],
+    "description": "A dark premium optics infographic explaining visible light, atomic structure, energy gaps, opaque materials, and real-world glass examples.",
+    "alt": "Infographic explaining why glass lets visible light pass through while absorbing other wavelengths.",
+    "status": "User-uploaded AI infographic",
+    "images": {
+      "thumb": "assets/images/glass-transparent-thumb.webp",
+      "large": "assets/images/glass-transparent-large.webp"
+    },
+    "video": null
+  },
+  {
+    "id": "leaves-tiny-pores",
+    "title": "Leaves breathe through tiny pores",
+    "question": "How do leaves take in carbon dioxide without losing too much water?",
+    "category": "Plant Biology",
+    "tags": [
+      "leaves",
+      "stomata",
+      "pores",
+      "carbon dioxide",
+      "water vapor",
+      "photosynthesis",
+      "plants"
+    ],
+    "takeaway": "Leaves use stomata to let CO₂ in for photosynthesis, but open pores also let water vapor escape.",
+    "mechanism": "Stomata open and close to balance carbon gain with water saving, allowing gas exchange while limiting water loss.",
+    "fields": [
+      "Plant Biology",
+      "Everyday Biology"
+    ],
+    "description": "A premium botanical infographic showing leaf stomata, carbon dioxide entering, water vapor escaping, and the balance between food making and water saving.",
+    "alt": "Infographic explaining leaf stomata pores that let carbon dioxide enter and water vapor escape.",
+    "status": "User-uploaded AI infographic",
+    "images": {
+      "thumb": "assets/images/leaves-tiny-pores-thumb.webp",
+      "large": "assets/images/leaves-tiny-pores-large.webp"
+    },
+    "video": null
   }
 ]
