@@ -87,6 +87,15 @@ button { cursor: pointer; }
   font-size: 28px;
   line-height: 1;
 }
+.icon-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .text-link {
   color: var(--color-ink);
   text-underline-offset: 4px;

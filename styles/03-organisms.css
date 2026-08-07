@@ -270,11 +270,19 @@
   box-shadow: var(--shadow-modal);
   padding: var(--space-5);
 }
-.lightbox-panel .icon-button {
+.lightbox-actions {
   position: absolute;
   right: 18px;
   top: 18px;
   z-index: 2;
+  display: flex;
+  gap: 10px;
+}
+.lightbox-actions .icon-button {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+.full-view-button {
+  text-decoration: none;
 }
 .lightbox-image-wrap {
   background: #ffffff;

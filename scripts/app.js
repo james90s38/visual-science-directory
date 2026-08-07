@@ -47,6 +47,7 @@ const modalFields = document.querySelector('#modalFields');
 const modalStatus = document.querySelector('#modalStatus');
 const modalDescription = document.querySelector('#modalDescription');
 const modalVideo = document.querySelector('#modalVideo');
+const modalFullViewButton = document.querySelector('#modalFullViewButton');
 
 const normalize = (value) => value.toLowerCase().trim();
 
@@ -246,6 +247,8 @@ function renderCurrentView() {
 function openModal(item) {
   modalImage.src = item.images.large;
   modalImage.alt = item.alt;
+  modalFullViewButton.href = item.images.large;
+  modalFullViewButton.setAttribute('aria-label', `Open ${item.title} in full view`);
   modalCategory.textContent = `${item.category} · ${item.tags.join(' / ')}`;
   modalTitle.textContent = item.title;
   modalTakeaway.textContent = item.takeaway;
