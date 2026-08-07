@@ -301,37 +301,9 @@ swipeOpenButton.addEventListener('click', () => {
   if (filtered.length) openModal(filtered[state.swipeIndex]);
 });
 
-let lastScrollY = window.scrollY;
-let toolbarHidden = false;
-
-function updateToolbarVisibility() {
-  if (!toolbar) return;
-
-  const current = window.scrollY;
-  const delta = current - lastScrollY;
-  const isMobile = window.innerWidth <= 760;
-  const toolbarStart = Math.max(0, toolbar.offsetTop - 8);
-
-  if (!isMobile || current <= toolbarStart) {
-    toolbar.classList.remove('is-hidden');
-    toolbarHidden = false;
-    lastScrollY = current;
-    return;
-  }
-
-  if (delta > 2 && !toolbarHidden) {
-    toolbar.classList.add('is-hidden');
-    toolbarHidden = true;
-  } else if (delta < -2 && toolbarHidden) {
-    toolbar.classList.remove('is-hidden');
-    toolbarHidden = false;
-  }
-
-  lastScrollY = current;
+if (toolbar) {
+  toolbar.classList.remove('is-hidden');
 }
-
-window.addEventListener('scroll', updateToolbarVisibility, { passive: true });
-window.addEventListener('resize', updateToolbarVisibility);
 
 renderSkeleton();
 renderViewControls();

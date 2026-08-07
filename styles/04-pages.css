@@ -7,14 +7,40 @@
 }
 @media (max-width: 760px) {
   :root { --grid-min: 220px; }
-  .site-nav { align-items: flex-start; }
-  .nav-links { gap: 12px; }
+  .site-nav {
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 16px 0;
+  }
+  .brand {
+    flex: 0 1 auto;
+    min-width: 0;
+    gap: 8px;
+    line-height: 1;
+  }
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    flex: 0 0 30px;
+  }
+  .brand span:last-child {
+    white-space: nowrap;
+  }
+  .nav-links {
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 12px;
+    line-height: 1;
+  }
   .site-header { padding-top: var(--space-7); }
   .site-heading-row { grid-template-columns: 1fr; gap: var(--space-4); }
   .toolbar {
     gap: 14px;
     margin-bottom: var(--space-5);
     padding: 10px 0 12px;
+    border-radius: 0;
   }
   .search-field input {
     min-height: 52px;

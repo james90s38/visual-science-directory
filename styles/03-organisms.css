@@ -89,28 +89,23 @@
 .float-icon-d { right: 27%; top: 66%; font-size: 46px; }
 .float-icon-e { right: 8%; top: 45%; font-size: 34px; }
 .toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 5;
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: minmax(240px, 360px) minmax(320px, 1fr) auto;
+  grid-template-columns: minmax(260px, 390px) minmax(320px, 1fr);
   align-items: end;
   gap: var(--space-6);
   margin-bottom: var(--space-7);
   padding: var(--space-4) 0;
   background: transparent;
-  backdrop-filter: none;
+  border: 0;
+  border-radius: 0;
   box-shadow: none;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 180ms ease, transform 180ms ease, box-shadow 180ms ease;
-  will-change: opacity, transform;
 }
 .toolbar.is-hidden {
-  transform: translateY(-8px);
-  opacity: 0;
-  box-shadow: none;
-  pointer-events: none;
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
 }
 .gallery-grid {
   display: grid;
