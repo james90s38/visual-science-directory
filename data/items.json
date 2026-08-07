@@ -200,5 +200,65 @@
       "large": "assets/images/leaves-tiny-pores-large.webp"
     },
     "video": null
+  },
+  {
+    "id": "photosynthesis-sunlight-to-life",
+    "title": "Photosynthesis turns sunlight into life",
+    "question": "How do plants turn sunlight, water, and carbon dioxide into sugar and oxygen?",
+    "category": "Plant Biology",
+    "tags": [
+      "photosynthesis",
+      "plants",
+      "sunlight",
+      "chloroplasts",
+      "calvin cycle",
+      "glucose",
+      "oxygen"
+    ],
+    "takeaway": "Photosynthesis uses light energy to turn carbon dioxide and water into glucose, releasing oxygen as a byproduct.",
+    "mechanism": "In chloroplasts, light reactions capture energy in ATP and NADPH, then the Calvin cycle uses that energy to fix carbon dioxide into sugars.",
+    "fields": [
+      "Plant Biology",
+      "Biochemistry",
+      "Everyday Biology"
+    ],
+    "description": "A dark detailed plant-science infographic explaining the big picture of photosynthesis, chloroplast structure, light reactions, the Calvin cycle, glucose storage, and the factors that affect the process.",
+    "alt": "Dark infographic explaining photosynthesis, light reactions, the Calvin cycle, glucose production, and oxygen release in plants.",
+    "status": "User-uploaded AI infographic",
+    "images": {
+      "thumb": "assets/images/photosynthesis-sunlight-to-life-thumb.webp",
+      "large": "assets/images/photosynthesis-sunlight-to-life-large.webp"
+    },
+    "video": null
+  },
+  {
+    "id": "how-a-plant-makes-fruit",
+    "title": "How a plant makes a fruit",
+    "question": "How does a flower become a fruit with seeds?",
+    "category": "Plant Biology",
+    "tags": [
+      "fruit",
+      "flower",
+      "pollination",
+      "fertilization",
+      "seed development",
+      "ovary",
+      "plants"
+    ],
+    "takeaway": "A fruit forms when a flower is pollinated, fertilization happens, seeds develop, and the ovary grows into the fruit wall.",
+    "mechanism": "Pollen reaches the stigma, a pollen tube grows to the ovule, fertilization triggers seed development, and the ovary matures into a ripe fruit that helps seeds disperse.",
+    "fields": [
+      "Plant Biology",
+      "Botany",
+      "Everyday Biology"
+    ],
+    "description": "A clean botanical infographic showing flower anatomy, pollination, fertilization, seed development, ovary growth, fruit ripening, seed dispersal, and common fruit forms.",
+    "alt": "Botanical infographic explaining how pollination and fertilization turn a flower ovary into a fruit with seeds.",
+    "status": "User-uploaded AI infographic",
+    "images": {
+      "thumb": "assets/images/how-a-plant-makes-fruit-thumb.webp",
+      "large": "assets/images/how-a-plant-makes-fruit-large.webp"
+    },
+    "video": null
   }
 ]
